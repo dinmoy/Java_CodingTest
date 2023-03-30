@@ -1,27 +1,22 @@
-package Ex06;
+package Ex09;
 
-import java.util.Arrays;
-
-class Solution{
-	public int[] solution(int[] arr) {
-		int left=0,temp=0;
-		int right=arr.length-1;
-		while(left<right) {
-			temp=arr[left];
-			arr[left]=arr[right];
-			arr[right]=temp;
-			left++;
-			right--;
+public class Solution {
+	public String solution(String characters) {
+		String result="";
+		result+=characters.charAt(0);
+		for(int i=0;i<characters.length()-1;i++) {
+			if(characters.charAt(i)!=characters.charAt(i+1))
+				result+=characters.charAt(i+1);
+			
 		}
-		return arr;
+		return result;
 	}
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Solution sol=new Solution();
-		int[] arr= {1,4,2,3};
-		int[] ret=sol.solution(arr);
-		System.out.println("Solution: return value of the method is "+Arrays.toString(ret)+".");
+		String characters="senteeeencccceee";
+		String ret=sol.solution(characters);
+		System.out.println("Solution: return value of the method is "+ret+".");
 	}
 
 }
